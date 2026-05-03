@@ -126,6 +126,9 @@
     gap: 1.5rem;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 <body>
@@ -140,10 +143,10 @@
 <nav>
   <div class="logo">THE GRAND KITCHEN</div>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#">Menu</a></li>
-    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#">About</a></li>
-    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#contact">Reserve</a></li>
-    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#contact">Contact</a></li>
+   <li><a href="#menu">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Reserve</a></li>
+<li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -152,7 +155,7 @@
     <p class="hero-subtitle">Est. 2024 — Kathmandu, Nepal</p>
     <h1>Where Every<br>Meal Tells<br><span>a Story</span></h1>
     <p>A refined dining experience crafted from the finest ingredients, where tradition meets modern culinary artistry.</p>
-    <a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#menu" class="btn">View Our Menu</a>
+    <a href="#menu" class="btn">View Our Menu</a>
   </div>
 </div>
 
@@ -277,7 +280,9 @@
         <input type="email" placeholder="Email Address">
         <input type="text" placeholder="Date &amp; Time">
         <textarea placeholder="Special requests..."></textarea>
-       <button type="button" class="btn" onclick="window.open('https://wa.me/9779702301902?text=Hello! I would like to make a reservation at The Grand Kitchen.', '_blank')">
+      <button type="button" class="btn" onclick="window.open('https://wa.me/9779702301902?text=Hello! I would like to make a reservation at The Grand Kitchen.', '_blank')">
+  Reserve Now
+</button>
       </div>
     </div>
   </div>
