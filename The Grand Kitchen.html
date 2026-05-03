@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///C:/Users/mande/Downloads/the-grand-kitchen.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grand Kitchen</title>
+<link href="./The Grand Kitchen_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --black: #1C1C1C;
+    --brown: #A47148;
+    --brown-dark: #8B5E3C;
+    --cream: #F5F2EC;
+    --amber: #D9A441;
+    --olive: #6B7D5C;
+    --cream-muted: #E8E3D8;
+    --brown-light: #C9A47A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--black); }
+
+  nav { position: fixed; top: 0; width: 100%; background: rgba(28,28,28,0.97); padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; border-bottom: 1px solid #2e2e2e; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; letter-spacing: 2px; color: var(--amber); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--cream-muted); text-decoration: none; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--amber); }
+
+  .hero { height: 100vh; background: var(--black); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, rgba(164,113,72,0.18) 0%, transparent 65%); }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--amber), var(--brown), transparent); }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-subtitle { font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; color: var(--brown-light); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; color: var(--cream); }
+  .hero h1 span { color: var(--amber); }
+  .hero p { font-size: 1.05rem; color: #aaa; max-width: 480px; margin: 0 auto 2.5rem; font-weight: 300; line-height: 1.9; }
+  .btn { display: inline-block; padding: 0.9rem 2.5rem; background: var(--amber); color: var(--black); text-decoration: none; font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; transition: all 0.3s; cursor: pointer; border: none; }
+  .btn:hover { background: var(--brown); color: var(--cream); }
+
+  .divider { text-align: center; padding: 1.5rem 0; background: var(--cream); }
+  .divider-line { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+  .divider-line::before, .divider-line::after { content: ''; flex: 1; max-width: 120px; height: 1px; background: var(--brown-light); }
+  .divider-icon { color: var(--amber); font-size: 1.1rem; letter-spacing: 6px; }
+
+  section { padding: 6rem 3rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 5px; text-transform: uppercase; color: var(--olive); text-align: center; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; text-align: center; margin-bottom: 1rem; color: var(--black); }
+  .section-desc { text-align: center; color: #777; max-width: 500px; margin: 0 auto 4rem; line-height: 1.9; font-weight: 300; }
+
+  .menu { background: var(--cream); }
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 980px; margin: 0 auto; }
+  .menu-card { background: #fff; border: 1px solid var(--cream-muted); padding: 2rem 1.5rem; transition: all 0.3s; border-top: 3px solid transparent; }
+  .menu-card:hover { border-top-color: var(--amber); box-shadow: 0 8px 24px rgba(164,113,72,0.1); transform: translateY(-2px); }
+  .menu-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .menu-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--black); }
+  .menu-card p { color: #888; font-size: 0.88rem; line-height: 1.75; margin-bottom: 1.2rem; font-weight: 300; }
+  .menu-price { color: var(--amber); font-size: 0.95rem; font-weight: 700; letter-spacing: 1px; }
+
+  .about { background: var(--black); color: var(--cream); }
+  .about .section-title { color: var(--cream); }
+  .about .section-label { color: var(--brown-light); }
+  .about-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .about-inner p { color: #aaa; line-height: 2; font-weight: 300; font-size: 1rem; margin-bottom: 1.5rem; }
+  .about-inner p span { color: var(--amber); font-style: italic; }
+  .stats { display: flex; justify-content: center; gap: 4rem; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid #2e2e2e; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--amber); }
+  .stat-label { font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: #666; margin-top: 0.3rem; }
+
+  .features { background: var(--brown-dark); }
+  .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+  .feat-card { text-align: center; padding: 2rem 1rem; }
+  .feat-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .feat-card h4 { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .feat-card p { color: rgba(245,242,236,0.65); font-size: 0.88rem; line-height: 1.75; font-weight: 300; }
+
+  .contact { background: var(--cream); }
+  .contact-inner { max-width: 750px; margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+  .contact-info h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 1.2rem; color: var(--brown-dark); }
+  .contact-info p { color: #777; font-size: 0.9rem; line-height: 2.2; font-weight: 300; }
+  .contact-info .highlight { color: var(--olive); font-weight: 400; }
+
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 2rem; background: #25D366; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s; margin-top: 1.5rem; }
+  .whatsapp-btn:hover { background: #1da851; transform: translateY(-2px); }
+  .whatsapp-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+  .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 999; box-shadow: 0 4px 20px rgba(37,211,102,0.5); transition: all 0.3s; }
+  .whatsapp-float:hover { background: #1da851; transform: scale(1.1); }
+  .whatsapp-float svg { width: 30px; height: 30px; }
+
+  .contact-form input, .contact-form textarea { width: 100%; background: #fff; border: 1px solid var(--cream-muted); border-bottom: 2px solid var(--cream-muted); padding: 0.85rem 1rem; color: var(--black); font-family: 'Lato', sans-serif; font-size: 0.88rem; margin-bottom: 1rem; outline: none; transition: border-color 0.3s; }
+  .contact-form input:focus, .contact-form textarea:focus { border-bottom-color: var(--amber); }
+  .contact-form textarea { height: 90px; resize: none; }
+  .contact-form button { width: 100%; }
+
+  footer { background: var(--black); text-align: center; padding: 2rem; }
+  footer p { color: #444; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
+  footer span { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/9779702301902?text=Hello!%20I%20would%20like%20to%20make%20a%20reservation%20at%20The%20Grand%20Kitchen." target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+  </svg>
+</a>
+
+<nav>
+  <div class="logo">THE GRAND KITCHEN</div>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#">Menu</a></li>
+    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#">About</a></li>
+    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#contact">Reserve</a></li>
+    <li><a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <p class="hero-subtitle">Est. 2024 — Kathmandu, Nepal</p>
+    <h1>Where Every<br>Meal Tells<br><span>a Story</span></h1>
+    <p>A refined dining experience crafted from the finest ingredients, where tradition meets modern culinary artistry.</p>
+    <a href="file:///C:/Users/mande/Downloads/the-grand-kitchen.html#menu" class="btn">View Our Menu</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line">
+    <div class="divider-icon">✦ ✦ ✦</div>
+  </div>
+</div>
+
+<section class="menu" id="menu">
+  <p class="section-label">Our Offerings</p>
+  <h2 class="section-title">Signature Dishes</h2>
+  <p class="section-desc">Each dish is prepared with seasonal ingredients sourced from local farms and trusted suppliers.</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-icon">🥩</div>
+      <h3>Prime Grilled Tenderloin</h3>
+      <p>Slow-aged beef tenderloin with truffle butter, roasted garlic mash, and red wine reduction.</p>
+      <div class="menu-price">Rs. 1,800</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-icon">🍝</div>
+      <h3>Wild Mushroom Risotto</h3>
+      <p>Arborio rice with wild mushroom medley, aged parmesan, fresh thyme, and white truffle oil.</p>
+      <div class="menu-price">Rs. 1,200</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-icon">🐟</div>
+      <h3>Pan-Seared Himalayan Trout</h3>
+      <p>Fresh mountain trout with lemon caper butter, seasonal vegetables, and herb roasted potatoes.</p>
+      <div class="menu-price">Rs. 1,500</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-icon">🥗</div>
+      <h3>Garden Fresh Caesar</h3>
+      <p>Crisp romaine hearts, house-made caesar dressing, parmesan crisps, and toasted croutons.</p>
+      <div class="menu-price">Rs. 650</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-icon">🍲</div>
+      <h3>Grand Kitchen Dal</h3>
+      <p>Slow-cooked black lentils with cream, butter, and aromatic spices — our signature comfort dish.</p>
+      <div class="menu-price">Rs. 750</div>
+    </div>
+    <div class="menu-card">
+      <div class="menu-icon">🍮</div>
+      <h3>Cardamom Crème Brûlée</h3>
+      <p>Classic French custard infused with Nepali cardamom, topped with a crisp caramelized sugar crust.</p>
+      <div class="menu-price">Rs. 550</div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <p class="section-label" style="color:var(--cream-muted);opacity:0.7;">Why Choose Us</p>
+  <h2 class="section-title" style="color:var(--cream);">The Grand Experience</h2>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🌿</div>
+      <h4>Farm to Table</h4>
+      <p>Ingredients sourced daily from local Nepali farms for the freshest flavors on your plate.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">👨‍🍳</div>
+      <h4>Master Chefs</h4>
+      <p>Our culinary team brings decades of experience from kitchens across Nepal and abroad.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🕯️</div>
+      <h4>Warm Ambience</h4>
+      <p>A cozy, upscale setting designed for intimate dinners, celebrations, and business meals.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <p class="section-label">Our Story</p>
+    <h2 class="section-title">Passion on Every Plate</h2>
+    <p>The Grand Kitchen was born from a simple belief — that <span>great food has the power to bring people together.</span> Our chefs combine classical techniques with the bold, vibrant flavors of Nepal to create a dining experience unlike any other.</p>
+    <p>Every ingredient is chosen with care. Every dish is crafted with love. Every visit is a memory worth keeping.</p>
+    <div class="stats">
+      <div>
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div>
+        <div class="stat-num">80+</div>
+        <div class="stat-label">Menu Items</div>
+      </div>
+      <div>
+        <div class="stat-num">5000+</div>
+        <div class="stat-label">Happy Guests</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-label">Get In Touch</p>
+  <h2 class="section-title">Reserve Your Table</h2>
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h4>Visit Us</h4>
+        <p>
+          Thamel, Kathmandu<br>
+          Nepal 44600<br><br>
+          <span class="highlight">Mon – Sun: 11am – 10pm</span><br><br>
+          +977 9702301902<br>
+          hello@grandkitchen.com
+        </p>
+        <a href="https://wa.me/9779702301902?text=Hello!%20I%20would%20like%20to%20make%20a%20reservation%20at%20The%20Grand%20Kitchen." target="_blank" class="whatsapp-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Date &amp; Time">
+        <textarea placeholder="Special requests..."></textarea>
+        <button class="btn" onclick="window.open(&#39;https://wa.me/9779702301902?text=Hello! I would like to make a reservation at The Grand Kitchen.&#39;, &#39;_blank&#39;)">Send via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 <span>The Grand Kitchen</span> — All Rights Reserved</p>
+</footer>
+
+
+
+</body></html>
